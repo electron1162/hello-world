@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: guestbook
-  namespace: guestbook-ui
+  name: hello-world
+  namespace: argocd
 spec:
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
   destination:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: guestbook
-    repoURL: 'https://github.com/argoproj/argocd-example-apps.git'
+    repoURL: 'https://github.com/electron1162/hello-world.git'
+    path: "." 
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
