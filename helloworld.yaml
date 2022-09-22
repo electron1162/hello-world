@@ -4,6 +4,9 @@ metadata:
   name: hello-deployment
   namespace: argocd
 spec:
+  selector:
+    matchLabels:
+      run: hello-world
   replicas: 1
   template:
     metadata:
